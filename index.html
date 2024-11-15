@@ -38,19 +38,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            text-align: center;
+            padding: 20px;
         }
         .menu-category {
             padding: 20px;
-        }
-        .menu-category h2 {
-            border-bottom: 2px solid #333;
-            margin-bottom: 10px;
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
         }
         footer {
             background-color: #333;
@@ -59,59 +51,31 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+        .language-selection a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .language-selection a:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>お守り</h1>
+    <h1>メニュー表</h1>
 </header>
 
-<nav>
-    <a href="#lunch">お札</a>
-    <a href="#dinner">お守り</a>
-    <a href="#drinks">限定</a>
-</nav>
-
-<section id="lunch">
-    <div class="menu-category">
-        <h2>お札</h2>
-        <div class="menu-item">
-            <span>上杉神社</span>
-            <span>¥700</span>
-        </div>
-        <div class="menu-item">
-            <span>松が岬神社</span>
-            <span>¥700</span>
-        </div>
-    </div>
-</section>
-
-<section id="dinner">
-    <div class="menu-category">
-        <h2>お守り</h2>
-        <div class="menu-item">
-            <span>上杉守り</span>
-            <span>¥700</span>
-        </div>
-        <div class="menu-item">
-            <span>なせばなる守り</span>
-            <span>¥700</span>
-        </div>
-    </div>
-</section>
-
-<section id="drinks">
-    <div class="menu-category">
-        <h2>限定</h2>
-        <div class="menu-item">
-            <span>土鈴</span>
-            <span>¥1000</span>
-        </div>
-        <div class="menu-item">
-            <span>上杉・松が岬両神社</span>
-            <span>¥700</span>
-        </div>
+<section>
+    <h2>言語を選択してください / Please select a language / 请选择语言</h2>
+    <div class="language-selection">
+        <a href="menu-ja.html">日本語</a>
+        <a href="menu-en.html">English</a>
+        <a href="menu-zh.html">中文</a>
     </div>
 </section>
 
