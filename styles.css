@@ -11,10 +11,6 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -25,11 +21,9 @@ header h1 {
 }
 
 .top-image {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 80px;
-    z-index: 999;
+    width: auto;
+    height: 70%;
+    margin-top: 20px;
 }
 
 nav {
@@ -37,10 +31,6 @@ nav {
     justify-content: center;
     background-color: #d7b19d;
     padding: 10px 0;
-    position: fixed;
-    top: 300px; /* Below the header */
-    width: 100%;
-    z-index: 998;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
