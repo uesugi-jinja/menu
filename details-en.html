@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 英語用フォント */
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* 黒背景 */
+            color: #ffffff; /* 白文字 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #000000; /* 背景色 */
+            color: #ffffff; /* テキスト色 */
+            border-radius: 10px;
+        }
+        .container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .details p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #444444;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Product Image -->
+    <img src="" alt="Product Image" id="product-image">
+
+    <!-- Product Details -->
+    <div class="details">
+        <h1 id="product-name">Product Name</h1>
+        <p id="product-description">Product details will be displayed here.</p>
+        <a href="menu-en.html" class="back-link">Return to Menu</a>
+    </div>
+</div>
+
+<script>
+    // Get product ID from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const item = urlParams.get('item');
+
+    // Product database
+    const products = {
+        uesugi: {
+            name: 'Uesugi Shrine Talisman',
+            image: 'uesugi.jpg',
+            description: 'For family safety and physical strength.',
+        },
+        matsugasaki: {
+            name: 'Matsugasaki Shrine Talisman',
+            image: 'matsugasaki.jpg',
+            description: 'For academic and industrial prosperity.',
+        },
+        uesugi_omamori: {
+            name: 'Uesugi Omamori',
+            image: 'uesugi_omamori.jpg',
+            description: 'Health Omamori: For physical strength and good health.',
+        },
+        nasebanaru: {
+            name: 'Naseba Naru Omamori',
+            image: 'nasebanaru.jpg',
+            description: 'Achievement Omamori: Supports achieving goals.',
+        },
+        dorin: {
+            name: 'Doriru (Bell)',
+            image: 'dorin.jpg',
+            description: 'New Year’s bell for wishing happiness in the upcoming year.',
+        },
+        marimamori: {
+            name: 'Marimamori',
+            image: 'marimamori.jpg',
+            description: 'For the health and growth of children.',
+        },
+        yakuyoke: {
+            name: 'Yakuyoke Omamori',
+            image: 'yakuyoke.jpg',
+            description: 'Protects from misfortunes and ensures peaceful days.',
+        },
+        gokaku: {
+            name: 'Gokaku Omamori',
+            image: 'gokaku.jpg',
+            description: 'An Omamori for success in exams. Recommended for students.',
+        },
+        kachi: {
+            name: 'Kachi Omamori',
+            image: 'kachi.jpg',
+            description: 'An Omamori for victory. Ideal for sports or competitions.',
+        },
+    };
+
+    // Display product information
+    if (products[item]) {
+        document.getElementById('product-name').textContent = products[item].name;
+        document.getElementById('product-image').src = products[item].image;
+        document.getElementById('product-description').textContent = products[item].description;
+    } else {
+        document.getElementById('product-name').textContent = 'Product Not Found';
+        document.getElementById('product-description').textContent = 'Sorry, the specified product does not exist.';
+    }
+</script>
+
+</body>
+</html>
