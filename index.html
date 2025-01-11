@@ -6,69 +6,56 @@
     <title>上杉神社</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "KaiTi", "楷書", serif; /* 楷書体に設定 */
             margin: 0;
             padding: 0;
             background-color: #ffffff; /* 背景色を白に設定 */
         }
-        header {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #ffffff; /* 背景色を白に設定 */
-            border-bottom: 2px solid #000000; /* 下に黒い線を引く */
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 60px); /* フッターを除いた高さ */
+            padding: 20px;
+            box-sizing: border-box;
         }
-        header img {
-            width: 150px;
-            height: auto;
+        .container img {
+            width: auto;
+            height: 300px; /* 縦方向に合わせて高さを固定 */
+            object-fit: contain; /* 縦横比を維持 */
         }
-        nav {
-            position: relative;
-            background-color: #ffffff; /* 背景を白に設定 */
-            padding: 20px 0;
-            text-align: center;
-            z-index: 2; /* 背景画像の上に表示する */
-            height: 300px; /* 背景画像が縦に広がるエリアの高さ */
-            overflow: hidden; /* 必要に応じて超過部分を隠す */
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px; /* 画像との間隔を設定 */
         }
-        nav::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('uesgitop.jpg'); /* 背景画像 */
-            background-size: contain; /* 縦横比を保ちながら全体を表示 */
-            background-repeat: no-repeat; /* 繰り返し表示を無効化 */
-            background-position: center; /* 中央揃え */
-            z-index: -1; /* 背景として表示 */
-            opacity: 0.7; /* 画像の透明度を設定 */
-        }
-        nav a {
-            display: inline-block;
-            margin: 0 10px;
+        .links a {
+            display: block;
+            margin: 10px 0;
             padding: 10px 20px;
             text-decoration: none;
             color: #000000; /* 文字色を黒に設定 */
-            font-size: 16px;
+            font-size: 18px;
             background-color: #ffffff; /* 各リンクの背景を白に設定 */
             border: 2px solid #000000; /* 枠線を追加 */
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
         }
-        nav a:hover {
+        .links a:hover {
             background-color: #f0f0f0; /* ホバー時の背景色 */
         }
         footer {
-            background-color: #333333; /* 黒背景 */
-            color: #ffffff; /* 文字色を白に */
+            background-color: #000000; /* 背景色を黒に設定 */
+            color: #ffffff; /* 文字色を白に設定 */
             text-align: center;
             padding: 10px 0;
-            margin-top: 20px;
-            border-top: 2px solid #000000; /* 上に黒い線を引く */
+            border-top: 2px solid #000000; /* 上部の黒線 */
         }
         footer a {
-            color: #ffffff;
+            color: #ffffff; /* フッター内リンクの文字色を白に */
             text-decoration: none;
             font-size: 14px;
         }
@@ -79,15 +66,14 @@
 </head>
 <body>
 
-<header>
-    <img src="title/uesugititle.png" alt="上杉神社">
-</header>
-
-<nav>
-    <a href="menu-ja.html">日本語</a>
-    <a href="menu-en.html">English</a>
-    <a href="menu-zh.html">中文</a>
-</nav>
+<div class="container">
+    <img src="uesgitop.jpg" alt="上杉神社">
+    <div class="links">
+        <a href="menu-ja.html">日本語</a>
+        <a href="menu-en.html">English</a>
+        <a href="menu-zh.html">中文</a>
+    </div>
+</div>
 
 <footer>
     <p>お問い合わせ: 012-345-6789</p>
