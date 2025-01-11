@@ -24,11 +24,11 @@
         nav {
             position: relative;
             background-color: #ffffff; /* 背景を白に設定 */
-            padding: 20px 0;
-            text-align: center;
-            z-index: 2; /* 背景画像の上に表示する */
             height: 300px; /* 背景画像が縦に広がるエリアの高さ */
             overflow: hidden; /* 必要に応じて超過部分を隠す */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         nav::before {
             content: "";
@@ -43,9 +43,15 @@
             background-position: center; /* 中央揃え */
             z-index: -1; /* 背景として表示 */
         }
-        nav a {
-            display: inline-block;
-            margin: 0 10px;
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1; /* 背景より上に表示 */
+        }
+        .links a {
+            display: block;
+            margin: 10px 0;
             padding: 10px 20px;
             text-decoration: none;
             color: #000000; /* 文字色を黒に設定 */
@@ -54,12 +60,13 @@
             border: 2px solid #000000; /* 枠線を追加 */
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
         }
-        nav a:hover {
+        .links a:hover {
             background-color: #f0f0f0; /* ホバー時の背景色 */
         }
         footer {
-            background-color: #333333; /* 黒背景 */
+            background-color: #000000; /* 黒背景 */
             color: #ffffff; /* 文字色を白に */
             text-align: center;
             padding: 10px 0;
@@ -83,9 +90,11 @@
 </header>
 
 <nav>
-    <a href="menu-ja.html">日本語</a>
-    <a href="menu-en.html">English</a>
-    <a href="menu-zh.html">中文</a>
+    <div class="links">
+        <a href="menu-ja.html">日本語</a>
+        <a href="menu-en.html">English</a>
+        <a href="menu-zh.html">中文</a>
+    </div>
 </nav>
 
 <footer>
