@@ -42,9 +42,8 @@
             padding: 10px;
         }
         .menu-category {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 各要素が独立して広がる */
             gap: 20px;
         }
         .menu-item {
@@ -52,15 +51,13 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 200px;
             border: 1px solid #cccccc;
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            overflow: hidden; /* 内部の内容に影響されないように */
-            height: 300px; /* 各枠の高さを固定 */
+            overflow: hidden; /* 内部の内容を切り取る */
+            transition: all 0.3s ease-in-out; /* 高さのアニメーションをスムーズに */
         }
         .menu-item img {
             width: 100%;
@@ -85,8 +82,11 @@
             text-align: center;
             transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
         }
+        .menu-item.expanded {
+            align-items: start; /* 説明が出たとき上から順に並ぶ */
+        }
         .menu-item.expanded .description {
-            max-height: 100px; /* アニメーションで表示する高さ */
+            max-height: 100px; /* 説明が表示される最大高さ */
             padding-top: 10px;
         }
         footer {
