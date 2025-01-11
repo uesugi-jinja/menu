@@ -12,17 +12,36 @@
             background-color: #ffffff; /* 背景色を白に設定 */
         }
         .container {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 60px); /* フッターを除いた全画面表示 */
+            overflow: hidden; /* はみ出す部分を隠す */
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('uesgitop.jpg'); /* 背景画像 */
+            background-size: cover; /* ウィンドウのサイズに収める */
+            background-position: center; /* 画像を中央揃え */
+            z-index: -1; /* 背景として表示 */
+        }
+        .content {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 60px); /* フッターを除いた高さ */
+            height: 100%; /* コンテナ全体に配置 */
             padding: 20px;
             box-sizing: border-box;
+            z-index: 1; /* 背景より上に表示 */
         }
-        .container img {
+        .content img {
             width: auto;
-            height: 300px; /* 縦方向に合わせて高さを固定 */
+            height: 300px; /* 画像の高さを固定 */
             object-fit: contain; /* 縦横比を維持 */
         }
         .links {
@@ -67,11 +86,13 @@
 <body>
 
 <div class="container">
-    <img src="uesgitop.jpg" alt="上杉神社">
-    <div class="links">
-        <a href="menu-ja.html">日本語</a>
-        <a href="menu-en.html">English</a>
-        <a href="menu-zh.html">中文</a>
+    <div class="content">
+        <img src="title/uesugititle.png" alt="上杉神社">
+        <div class="links">
+            <a href="menu-ja.html">日本語</a>
+            <a href="menu-en.html">English</a>
+            <a href="menu-zh.html">中文</a>
+        </div>
     </div>
 </div>
 
