@@ -45,6 +45,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: space-around;
         }
         .menu-item {
             display: flex;
@@ -57,8 +58,8 @@
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            overflow: hidden; /* 内容を切り取る */
-            transition: all 0.3s ease-in-out; /* スムーズなアニメーション */
+            text-decoration: none;
+            color: #000000;
         }
         .menu-item img {
             width: 100%;
@@ -73,22 +74,6 @@
         .menu-item span.price {
             font-size: 14px;
             color: #555555;
-        }
-        .description {
-            max-height: 0;
-            overflow: hidden;
-            font-size: 14px;
-            color: #333333;
-            margin-top: 10px;
-            text-align: center;
-            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-        }
-        .menu-item.expanded {
-            align-items: center; /* 必要に応じて調整 */
-        }
-        .menu-item.expanded .description {
-            max-height: 100px; /* 説明の高さをアニメーション */
-            padding-top: 10px;
         }
         footer {
             background-color: #000000;
@@ -107,23 +92,6 @@
             text-decoration: underline;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    // 他のアイテムの状態をリセット
-                    menuItems.forEach(i => {
-                        if (i !== item) {
-                            i.classList.remove('expanded');
-                        }
-                    });
-                    // クリックしたアイテムをトグル
-                    item.classList.toggle('expanded');
-                });
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -140,52 +108,46 @@
 <section id="lunch">
     <h2>お神札</h2>
     <div class="menu-category">
-        <div class="menu-item">
+        <a href="details.html?item=uesugi" class="menu-item">
             <img src="uesugi.jpg" alt="上杉神社">
             <span class="name">上杉神社</span>
             <span class="price">¥700</span>
-            <div class="description">上杉神社は山形県米沢市にある歴史ある神社です。</div>
-        </div>
-        <div class="menu-item">
+        </a>
+        <a href="details.html?item=matsugasaki" class="menu-item">
             <img src="matsugasaki.jpg" alt="松が岬神社">
             <span class="name">松が岬神社</span>
             <span class="price">¥700</span>
-            <div class="description">松が岬神社は米沢城跡に位置する神社です。</div>
-        </div>
+        </a>
     </div>
 </section>
 
 <section id="dinner">
     <h2>お守り</h2>
     <div class="menu-category">
-        <div class="menu-item">
+        <a href="details.html?item=uesugi_omamori" class="menu-item">
             <img src="uesugi_omamori.jpg" alt="上杉守り">
             <span class="name">上杉守り</span>
             <span class="price">¥700</span>
-            <div class="description">上杉守りは健康と成功を祈願するお守りです。</div>
-        </div>
-        <div class="menu-item">
+        </a>
+        <a href="details.html?item=nasebanaru" class="menu-item">
             <img src="nasebanaru.jpg" alt="なせばなる守り">
             <span class="name">なせばなる守り</span>
             <span class="price">¥700</span>
-            <div class="description">なせばなる守りは挑戦を支える力を授けるお守りです。</div>
-        </div>
+        </a>
     </div>
 </section>
 
 <section id="drinks">
     <h2>正月限定</h2>
     <div class="menu-category">
-        <div class="menu-item">
+        <a href="details.html?item=dorin" class="menu-item">
             <span class="name">土鈴</span>
             <span class="price">¥1000</span>
-            <div class="description">土鈴は新年の幸運を願う正月限定のアイテムです。</div>
-        </div>
-        <div class="menu-item">
+        </a>
+        <a href="details.html?item=marimamori" class="menu-item">
             <span class="name">鞠付き守り</span>
             <span class="price">¥700</span>
-            <div class="description">鞠付き守りは子供の健康と成長を祈願するお守りです。</div>
-        </div>
+        </a>
     </div>
 </section>
 
