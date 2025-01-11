@@ -1,126 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メニュー表 - 日本語</title>
-    <style>
-        body {
-            font-family: "KaiTi", "楷書", serif; /* 楷書体を設定 */
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #000000;
-        }
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 0;
-            text-align: center;
-        }
-        header img {
-            width: 150px;
-            height: auto;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #222222;
-        }
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 14px;
-        }
-        nav a:hover {
-            background-color: #444444;
-        }
-        section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-        .menu-category {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-around;
-        }
-        .menu-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 200px;
-            border: 1px solid #cccccc;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            text-decoration: none;
-            color: #000000;
-        }
-        .menu-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: contain;
-        }
-        .menu-item span.name {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 10px 0 5px;
-        }
-        .menu-item span.price {
-            font-size: 14px;
-            color: #555555;
-        }
-        footer {
-            background-color: #000000;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 12px;
-        }
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <img src="title/uesugititle.png" alt="上杉神社">
-</header>
-
-<nav>
-    <a href="#lunch">お神札</a>
-    <a href="#dinner">お守り</a>
-    <a href="#drinks">正月限定</a>
-</nav>
-
-<section id="lunch">
-    <h2>お神札</h2>
-    <div class="menu-category">
-        <a href="details.html?item=uesugi" class="menu-item" onclick="saveScrollPosition()">
-            <img src="uesugi.jpg" alt="上杉神社">
-            <span class="name">上杉神社</span>
-            <span class="price">¥700</span>
-        </a>
-        <a href="details.html?item=matsugasaki" class="menu-item" onclick="saveScrollPosition()">
-            <img src="matsugasaki.jpg" alt="松が岬神社">
-            <span class="name">松が岬神社</span>
-            <span class="price">¥700</span>
-        </a>
-    </div>
-</section>
-
 <section id="dinner">
     <h2>お守り</h2>
     <div class="menu-category">
@@ -134,42 +11,21 @@
             <span class="name">なせばなる守り</span>
             <span class="price">¥700</span>
         </a>
+        <!-- 新しいお守り -->
+        <a href="details.html?item=yakuyoke" class="menu-item" onclick="saveScrollPosition()">
+            <img src="yakuyoke.jpg" alt="厄除守">
+            <span class="name">厄除守</span>
+            <span class="price">¥800</span>
+        </a>
+        <a href="details.html?item=gokaku" class="menu-item" onclick="saveScrollPosition()">
+            <img src="gokaku.jpg" alt="合格守">
+            <span class="name">合格守</span>
+            <span class="price">¥800</span>
+        </a>
+        <a href="details.html?item=kachi" class="menu-item" onclick="saveScrollPosition()">
+            <img src="kachi.jpg" alt="勝ち守">
+            <span class="name">勝ち守</span>
+            <span class="price">¥800</span>
+        </a>
     </div>
 </section>
-
-<section id="drinks">
-    <h2>正月限定</h2>
-    <div class="menu-category">
-        <a href="details.html?item=dorin" class="menu-item" onclick="saveScrollPosition()">
-            <span class="name">土鈴</span>
-            <span class="price">¥1000</span>
-        </a>
-        <a href="details.html?item=marimamori" class="menu-item" onclick="saveScrollPosition()">
-            <span class="name">鞠付き守り</span>
-            <span class="price">¥700</span>
-        </a>
-    </div>
-</section>
-
-<footer>
-    <p>お問い合わせ: 012-345-6789</p>
-    <p><a href="index.html">メインページに戻る</a></p>
-</footer>
-
-<script>
-    // スクロール位置を保存
-    function saveScrollPosition() {
-        localStorage.setItem('scrollPosition', window.scrollY);
-    }
-
-    // スクロール位置を復元
-    window.onload = () => {
-        const scrollPosition = localStorage.getItem('scrollPosition');
-        if (scrollPosition) {
-            window.scrollTo(0, parseInt(scrollPosition, 10));
-        }
-    };
-</script>
-
-</body>
-</html>
