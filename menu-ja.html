@@ -55,7 +55,9 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .menu-item img {
-            width: 100%;
+            width: auto;
+            height: 120px; /* 縦の高さを揃える */
+            object-fit: cover; /* 画像をボックス内に収める */
             border-radius: 5px;
         }
         .menu-item span.name {
