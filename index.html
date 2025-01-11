@@ -21,32 +21,39 @@
             width: 150px;
             height: auto;
         }
-        nav {
-            position: relative;
-            background-color: #ffffff; /* 背景を白に設定 */
-            padding: 20px 0;
-            text-align: center;
-            z-index: 2; /* 背景画像の上に表示する */
-            height: 300px; /* 背景画像が縦に広がるエリアの高さ */
-            overflow: hidden; /* 必要に応じて超過部分を隠す */
-        }
-        nav::before {
-            content: "";
-            position: absolute;
-            top: 50;
+        .background {
+            position: absolute; /* 背景画像を固定 */
+            top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-image: url('uesgitop.jpg'); /* 背景画像 */
-            background-size: contain; /* 縦横比を保ちながら全体を表示 */
-            background-repeat: no-repeat; /* 繰り返し表示を無効化 */
-            background-position: center; /* 中央揃え */
-            z-index: -1; /* 背景として表示 */
-            opacity: 0.5; /* 画像の透明度を設定 */
+            height: 300px; /* 背景画像の高さ */
+            z-index: -1; /* 奥に配置 */
         }
-        nav a {
-            display: inline-block;
-            margin: 0 10px;
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 縦横比を保ちながら全体を表示 */
+        }
+        nav {
+            position: relative;
+            height: 300px; /* ナビゲーションエリアの高さ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* 背景より手前に配置 */
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* 背景を半透明白に設定 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .links a {
+            display: block;
+            margin: 10px 0;
             padding: 10px 20px;
             text-decoration: none;
             color: #000000; /* 文字色を黒に設定 */
@@ -55,12 +62,13 @@
             border: 2px solid #000000; /* 枠線を追加 */
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
         }
-        nav a:hover {
+        .links a:hover {
             background-color: #f0f0f0; /* ホバー時の背景色 */
         }
         footer {
-            background-color: #000000; /* 黒背景 */
+            background-color: #333333; /* 黒背景 */
             color: #ffffff; /* 文字色を白に */
             text-align: center;
             padding: 10px 0;
@@ -80,13 +88,20 @@
 <body>
 
 <header>
-    <img src="title/uesugititle.png" alt="上杉神社">
+    <img src="titleuesugititle.png" alt="上杉神社">
 </header>
 
+<!-- 背景画像 -->
+<div class="background">
+    <img src="uesgitop.jpg" alt="背景画像">
+</div>
+
 <nav>
-    <a href="menu-ja.html">日本語</a>
-    <a href="menu-en.html">English</a>
-    <a href="menu-zh.html">中文</a>
+    <div class="links">
+        <a href="menu-ja.html">日本語</a>
+        <a href="menu-en.html">English</a>
+        <a href="menu-zh.html">中文</a>
+    </div>
 </nav>
 
 <footer>
