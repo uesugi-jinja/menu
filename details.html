@@ -1,77 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品詳細</title>
-    <style>
-        body {
-            font-family: "KaiTi", "楷書", serif; /* 楷書体を設定 */
-            margin: 0;
-            padding: 0;
-            background-color: #000000; /* 背景を黒に設定 */
-            color: #ffffff; /* 文字色を白に設定 */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 900px;
-            text-align: center;
-            margin: 20px;
-            padding: 20px;
-            background-color: #000000; /* 背景を黒に設定 */
-            color: #ffffff; /* 文字色を白に設定 */
-            border-radius: 10px;
-        }
-        .container img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-        }
-        .details {
-            margin-top: 20px;
-        }
-        .details h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .details p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .back-link {
-            display: inline-block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #444444;
-            border-radius: 5px;
-        }
-        .back-link:hover {
-            background-color: #666666;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <!-- 商品画像 -->
-    <img src="" alt="商品画像" id="product-image">
-
-    <!-- 商品詳細 -->
-    <div class="details">
-        <h1 id="product-name">商品名</h1>
-        <p id="product-description">ここに商品説明が表示されます。</p>
-        <a href="menu-ja.html" class="back-link">メニューに戻る</a>
-    </div>
-</div>
-
 <script>
     // URLのパラメータから商品IDを取得
     const urlParams = new URLSearchParams(window.location.search);
@@ -109,6 +35,21 @@
             image: 'marimamori.jpg',
             description: '鞠付き守りは子供の健康と成長を祈願するお守りです。',
         },
+        yakuyoke: {
+            name: '厄除守',
+            image: 'yakuyoke.jpg',
+            description: '厄災を遠ざけ、平穏な日々を守るお守りです。',
+        },
+        gokaku: {
+            name: '合格守',
+            image: 'gokaku.jpg',
+            description: '試験合格を祈願するお守りです。受験生におすすめ。',
+        },
+        kachi: {
+            name: '勝ち守',
+            image: 'kachi.jpg',
+            description: '勝利を願うお守りです。スポーツや競技に最適。',
+        },
     };
 
     // 商品情報を表示
@@ -121,6 +62,3 @@
         document.getElementById('product-description').textContent = '申し訳ありませんが、指定された商品は存在しません。';
     }
 </script>
-
-</body>
-</html>
