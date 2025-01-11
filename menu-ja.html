@@ -13,13 +13,13 @@
             color: #000000;
         }
         header {
-            background-color: #ffffff; /* 背景を白に変更 */
+            background-color: #ffffff;
             color: #000000;
             padding: 10px 0;
             text-align: center;
         }
         header img {
-            width: 150px; /* 画像の幅を調整 */
+            width: 150px;
             height: auto;
         }
         nav {
@@ -37,7 +37,7 @@
             background-color: #444444;
         }
         section {
-            max-width: 900px; /* セクション全体の幅 */
+            max-width: 900px;
             margin: 20px auto;
             padding: 10px;
         }
@@ -58,6 +58,7 @@
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            cursor: pointer;
         }
         .menu-item img {
             width: 100%;
@@ -72,6 +73,13 @@
         .menu-item span.price {
             font-size: 14px;
             color: #555555;
+        }
+        .description {
+            display: none;
+            font-size: 14px;
+            color: #333333;
+            margin-top: 10px;
+            text-align: center;
         }
         footer {
             background-color: #000000;
@@ -90,6 +98,21 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const description = item.querySelector('.description');
+                    if (description.style.display === 'none' || description.style.display === '') {
+                        description.style.display = 'block';
+                    } else {
+                        description.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -110,11 +133,13 @@
             <img src="uesugi.jpg" alt="上杉神社">
             <span class="name">上杉神社</span>
             <span class="price">¥700</span>
+            <div class="description">上杉神社は山形県米沢市にある歴史ある神社です。</div>
         </div>
         <div class="menu-item">
             <img src="matsugasaki.jpg" alt="松が岬神社">
             <span class="name">松が岬神社</span>
             <span class="price">¥700</span>
+            <div class="description">松が岬神社は米沢城跡に位置する神社です。</div>
         </div>
     </div>
 </section>
@@ -126,11 +151,13 @@
             <img src="uesugi_omamori.jpg" alt="上杉守り">
             <span class="name">上杉守り</span>
             <span class="price">¥700</span>
+            <div class="description">上杉守りは健康と成功を祈願するお守りです。</div>
         </div>
         <div class="menu-item">
             <img src="nasebanaru.jpg" alt="なせばなる守り">
             <span class="name">なせばなる守り</span>
             <span class="price">¥700</span>
+            <div class="description">なせばなる守りは挑戦を支える力を授けるお守りです。</div>
         </div>
     </div>
 </section>
@@ -141,10 +168,12 @@
         <div class="menu-item">
             <span class="name">土鈴</span>
             <span class="price">¥1000</span>
+            <div class="description">土鈴は新年の幸運を願う正月限定のアイテムです。</div>
         </div>
         <div class="menu-item">
             <span class="name">鞠付き守り</span>
             <span class="price">¥700</span>
+            <div class="description">鞠付き守りは子供の健康と成長を祈願するお守りです。</div>
         </div>
     </div>
 </section>
