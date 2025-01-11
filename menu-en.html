@@ -172,27 +172,29 @@
 </footer>
 
 <script>
-    // スクロール位置を保存（詳細ページへ移動する際に使用）
+    // スクロール位置を保存する（詳細ページに移動する際に使用）
     function saveScrollPosition() {
         localStorage.setItem('scrollPosition', window.scrollY);
     }
 
-    // ページ読み込み時にスクロール位置を復元
+    // ページ読み込み時にスクロール位置を復元またはリセット
     window.onload = () => {
-        // index.html から来た場合にはスクロール位置を復元しない
         const referrer = document.referrer; // 前のページのURLを取得
-        if (!referrer || referrer.includes('index.html')) {
-            // スクロール位置を初期化
-            localStorage.removeItem('scrollPosition');
-        } else {
-            // スクロール位置を復元
+
+        if (referrer && referrer.includes('details')) {
+            // 詳細ページから戻った場合、スクロール位置を復元
             const scrollPosition = localStorage.getItem('scrollPosition');
             if (scrollPosition) {
                 window.scrollTo(0, parseInt(scrollPosition, 10));
             }
+        } else {
+            // index.html から来た場合、または初めて開いた場合
+            localStorage.removeItem('scrollPosition'); // スクロール位置をリセット
+            window.scrollTo(0, 0); // ページを一番上にスクロール
         }
     };
 </script>
+
 
 </body>
 </html>
