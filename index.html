@@ -3,82 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メニュー表</title>
+    <title>上杉神社</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #ffffff; /* 背景色を白に設定 */
         }
         header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
             text-align: center;
+            padding: 20px 0;
+            background-color: #ffffff; /* 背景色を白に設定 */
+            border-bottom: 2px solid #000000; /* 下に黒い線を引く */
+        }
+        header img {
+            width: 150px;
+            height: auto;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #333333; /* 黒背景 */
+            padding: 10px 0;
         }
         nav a {
-            color: white;
+            color: #ffffff; /* 文字色を白に */
             text-decoration: none;
             padding: 10px 20px;
-            display: block;
+            font-size: 16px;
         }
         nav a:hover {
-            background-color: #555;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
-        }
-        .menu-category {
-            padding: 20px;
+            background-color: #555555; /* ホバー時の背景色 */
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #333333; /* 黒背景 */
+            color: #ffffff; /* 文字色を白に */
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+            border-top: 2px solid #000000; /* 上に黒い線を引く */
         }
-        .language-selection a {
-            margin: 0 10px;
+        footer a {
+            color: #ffffff;
             text-decoration: none;
-            color: white;
-            background-color: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
+            font-size: 14px;
         }
-        .language-selection a:hover {
-            background-color: #555;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>メニュー表</h1>
+    <img src="title/uesugititle.png" alt="上杉神社">
 </header>
 
-<img src="uesgitop.jpg" alt="上杉神社" class="top-image">
-    
-<section>
-    <div class="language-selection">
-        <a href="menu-ja.html">日本語</a>
-        <a href="menu-en.html">English</a>
-        <a href="menu-zh.html">中文</a>
-    </div>
-</section>
+<nav>
+    <a href="menu-ja.html">日本語</a>
+    <a href="menu-en.html">English</a>
+    <a href="menu-zh.html">中文</a>
+</nav>
+
+<footer>
+    <p>お問い合わせ: 012-345-6789</p>
+</footer>
 
 </body>
 </html>
