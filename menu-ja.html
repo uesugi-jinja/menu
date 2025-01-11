@@ -58,7 +58,7 @@
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: all 0.3s ease-in-out; /* アニメーションでスムーズな変更 */
+            transition: all 0.3s ease-in-out;
         }
         .menu-item img {
             width: 100%;
@@ -75,17 +75,17 @@
             color: #555555;
         }
         .description {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             font-size: 14px;
             color: #333333;
             margin-top: 10px;
             text-align: center;
-        }
-        .menu-item.expanded {
-            height: auto; /* 拡張されたアイテムのみ高さを調整 */
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
         }
         .menu-item.expanded .description {
-            display: block;
+            max-height: 100px; /* アニメーションで表示する高さ */
+            padding-top: 10px;
         }
         footer {
             background-color: #000000;
