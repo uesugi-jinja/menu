@@ -61,18 +61,79 @@
 <body>
 
 <div class="container">
+    <!-- 商品图片 -->
     <img src="" alt="商品图片" id="product-image">
 
+    <!-- 商品详情 -->
     <div class="details">
         <h1 id="product-name">商品名称</h1>
-        <p id="product-description">商品详情将显示在这里。</p>
+        <p id="product-description">商品详情将在此处显示。</p>
         <a href="menu-zh.html" class="back-link">返回菜单</a>
     </div>
 </div>
 
 <script>
+    // 从URL参数中获取商品ID
     const urlParams = new URLSearchParams(window.location.search);
     const item = urlParams.get('item');
 
+    // 商品数据库
     const products = {
-       
+        uesugi: {
+            name: '上杉神社神符',
+            image: 'uesugi.jpg',
+            description: '用于祈愿家庭安全与身体健康。',
+        },
+        matsugasaki: {
+            name: '松岬神社神符',
+            image: 'matsugasaki.jpg',
+            description: '用于祈愿学业与产业的兴旺。',
+        },
+        uesugi_omamori: {
+            name: '上杉护身符',
+            image: 'uesugi_omamori.jpg',
+            description: '健康护身符：增强身体健康与力量。',
+        },
+        nasebanaru: {
+            name: '成功护身符',
+            image: 'nasebanaru.jpg',
+            description: '成就护身符：助力目标实现。',
+        },
+        dorei: {
+            name: '陶铃',
+            description: '新年限定陶铃，为来年祈福。',
+        },
+        marimamori: {
+            name: '带球护身符',
+            description: '保护儿童的健康与成长。',
+        },
+        yakuyoke: {
+            name: '厄除护身符',
+            image: 'yakuyoke.jpg',
+            description: '消除厄运，确保平安。',
+        },
+        gokaku: {
+            name: '合格护身符',
+            image: 'gokaku.jpg',
+            description: '考试合格护身符，适合学生使用。',
+        },
+        kachi: {
+            name: '胜利护身符',
+            image: 'kachi.jpg',
+            description: '胜利护身符，适用于运动或比赛。',
+        },
+    };
+
+    // 显示商品信息
+    if (products[item]) {
+        document.getElementById('product-name').textContent = products[item].name;
+        document.getElementById('product-image').src = products[item].image;
+        document.getElementById('product-description').textContent = products[item].description;
+    } else {
+        document.getElementById('product-name').textContent = '未找到商品';
+        document.getElementById('product-description').textContent = '抱歉，指定的商品不存在。';
+    }
+</script>
+
+</body>
+</html>
