@@ -33,29 +33,38 @@
             background-color: #444444;
         }
         section {
-            max-width: 600px;
-            margin: 10px auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 10px;
-            border-bottom: 1px solid #cccccc;
         }
         .menu-category {
-            text-align: left;
-            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
         }
         .menu-item {
             display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 150px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .menu-item span.name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        .menu-item span.price {
             font-size: 14px;
-            cursor: pointer;
-        }
-        .menu-item span {
-            display: inline-block;
-        }
-        .description {
-            display: none;
-            font-size: 12px;
-            padding: 5px 10px;
             color: #555555;
         }
         footer {
@@ -75,22 +84,6 @@
             text-decoration: underline;
         }
     </style>
-    <script>
-        // JavaScriptでトグル機能を実装
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.menu-item');
-            items.forEach(item => {
-                item.addEventListener('click', () => {
-                    const description = item.nextElementSibling;
-                    if (description.style.display === 'block') {
-                        description.style.display = 'none';
-                    } else {
-                        description.style.display = 'block';
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -105,61 +98,47 @@
 </nav>
 
 <section id="lunch">
+    <h2>お神札</h2>
     <div class="menu-category">
-        <h2>お神札</h2>
         <div class="menu-item">
-            <span>上杉神社</span>
-            <span>¥700</span>
-        </div>
-        <div class="description">
-            上杉神社は上杉謙信公を祀っています。
+            <img src="uesugi.jpg" alt="上杉神社">
+            <span class="name">上杉神社</span>
+            <span class="price">¥700</span>
         </div>
         <div class="menu-item">
-            <span>松が岬神社</span>
-            <span>¥700</span>
-        </div>
-        <div class="description">
-            松が岬神社は米沢城跡にあり、上杉家に関連する歴史的な神社です。
+            <img src="matsugasaki.jpg" alt="松が岬神社">
+            <span class="name">松が岬神社</span>
+            <span class="price">¥700</span>
         </div>
     </div>
 </section>
 
 <section id="dinner">
+    <h2>お守り</h2>
     <div class="menu-category">
-        <h2>お守り</h2>
         <div class="menu-item">
-            <span>上杉守り</span>
-            <span>¥700</span>
-        </div>
-        <div class="description">
-            上杉守りは勝利と成功を祈願するお守りです。
+            <img src="uesugi_omamori.jpg" alt="上杉守り">
+            <span class="name">上杉守り</span>
+            <span class="price">¥700</span>
         </div>
         <div class="menu-item">
-            <span>なせばなる守り</span>
-            <span>¥700</span>
-        </div>
-        <div class="description">
-            「なせばなる守り」は困難を乗り越える力を授けると言われています。
+            <img src="nasebanaru.jpg" alt="なせばなる守り">
+            <span class="name">なせばなる守り</span>
+            <span class="price">¥700</span>
         </div>
     </div>
 </section>
 
 <section id="drinks">
+    <h2>正月限定</h2>
     <div class="menu-category">
-        <h2>正月限定</h2>
         <div class="menu-item">
-            <span>土鈴</span>
-            <span>¥1000</span>
-        </div>
-        <div class="description">
-            土鈴は新年の幸運を祈るために人気のあるアイテムです。
+            <span class="name">土鈴</span>
+            <span class="price">¥1000</span>
         </div>
         <div class="menu-item">
-            <span>鞠付き守り</span>
-            <span>¥700</span>
-        </div>
-        <div class="description">
-            鞠付き守りは子供の健康と成長を願う特別なお守りです。
+            <span class="name">鞠付き守り</span>
+            <span class="price">¥700</span>
         </div>
     </div>
 </section>
