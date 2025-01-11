@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+        .container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .details p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #444444;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="" alt="商品图片" id="product-image">
+
+    <div class="details">
+        <h1 id="product-name">商品名称</h1>
+        <p id="product-description">商品详情将显示在这里。</p>
+        <a href="menu-zh.html" class="back-link">返回菜单</a>
+    </div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const item = urlParams.get('item');
+
+    const products = {
+       
