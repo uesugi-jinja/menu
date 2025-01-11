@@ -1,48 +1,190 @@
-<!-- 中国語メニュー -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>菜单 - 中文</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222222;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        nav a:hover {
+            background-color: #444444;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .menu-category {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 200px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000000;
+        }
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+        .menu-item span.name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        .menu-item span.price {
+            font-size: 14px;
+            color: #555555;
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <h1>餐厅菜单</h1>
+    <img src="title/uesugititle.png" alt="上杉神社">
 </header>
 
 <nav>
-    <a href="#lunch">午餐</a>
-    <a href="#dinner">晚餐</a>
-    <a href="#drinks">饮品</a>
+    <a href="#lunch">神符</a>
+    <a href="#dinner">护身符</a>
+    <a href="#drinks">新年限定物品</a>
 </nav>
 
 <section id="lunch">
+    <h2>神符</h2>
     <div class="menu-category">
-        <h2>午餐菜单</h2>
-        <div class="menu-item">
-            <span>咖喱饭</span>
-            <span>¥800</span>
-        </div>
-        <div class="menu-item">
-            <span>意大利面</span>
-            <span>¥900</span>
-        </div>
+        <a href="details-zh.html?item=uesugi" class="menu-item" onclick="saveScrollPosition()">
+            <img src="uesugi.jpg" alt="上杉神社">
+            <span class="name">上杉神社</span>
+            <span class="price">¥700</span>
+        </a>
+        <a href="details-zh.html?item=matsugasaki" class="menu-item" onclick="saveScrollPosition()">
+            <img src="matsugasaki.jpg" alt="松岬神社">
+            <span class="name">松岬神社</span>
+            <span class="price">¥700</span>
+        </a>
     </div>
 </section>
 
 <section id="dinner">
+    <h2>护身符</h2>
     <div class="menu-category">
-        <h2>晚餐菜单</h2>
-        <div class="menu-item">
-            <span>牛排</span>
-            <span>¥2000</span>
-        </div>
-        <div class="menu-item">
-            <span>汉堡肉排</span>
-            <span>¥1500</span>
-        </div>
+        <a href="details-zh.html?item=uesugi_omamori" class="menu-item" onclick="saveScrollPosition()">
+            <img src="uesugi_omamori.jpg" alt="上杉护身符">
+            <span class="name">上杉护身符</span>
+            <span class="price">¥700</span>
+        </a>
+        <a href="details-zh.html?item=nasebanaru" class="menu-item" onclick="saveScrollPosition()">
+            <img src="nasebanaru.jpg" alt="成功护身符">
+            <span class="name">成功护身符</span>
+            <span class="price">¥700</span>
+        </a>
+        <a href="details-zh.html?item=yakuyoke" class="menu-item" onclick="saveScrollPosition()">
+            <img src="yakuyoke.jpg" alt="厄除护身符">
+            <span class="name">厄除护身符</span>
+            <span class="price">¥800</span>
+        </a>
+        <a href="details-zh.html?item=gokaku" class="menu-item" onclick="saveScrollPosition()">
+            <img src="gokaku.jpg" alt="合格护身符">
+            <span class="name">合格护身符</span>
+            <span class="price">¥800</span>
+        </a>
+        <a href="details-zh.html?item=kachi" class="menu-item" onclick="saveScrollPosition()">
+            <img src="kachi.jpg" alt="胜利护身符">
+            <span class="name">胜利护身符</span>
+            <span class="price">¥800</span>
+        </a>
     </div>
-</
+</section>
+
+<section id="drinks">
+    <h2>新年限定物品</h2>
+    <div class="menu-category">
+        <a href="details-zh.html?item=dorei" class="menu-item" onclick="saveScrollPosition()">
+            <span class="name">陶铃</span>
+            <span class="price">¥1000</span>
+        </a>
+        <a href="details-zh.html?item=marimamori" class="menu-item" onclick="saveScrollPosition()">
+            <span class="name">带球护身符</span>
+            <span class="price">¥700</span>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>联系方式: 0238-22-3189</p>
+    <p><a href="index.html">返回主页面</a></p>
+</footer>
+
+<script>
+    // Save scroll position
+    function saveScrollPosition() {
+        localStorage.setItem('scrollPosition', window.scrollY);
+    }
+
+    // Restore scroll position
+    window.onload = () => {
+        const scrollPosition = localStorage.getItem('scrollPosition');
+        if (scrollPosition) {
+            window.scrollTo(0, parseInt(scrollPosition, 10));
+        }
+    };
+</script>
+
+</body>
+</html>
