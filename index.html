@@ -6,7 +6,7 @@
     <title>上杉神社</title>
     <style>
         body {
-            font-family: "KaiTi", "楷書", serif; 
+            font-family: "KaiTi", "楷書", serif; /* 楷書体に設定 */
             margin: 0;
             padding: 0;
             background-color: #ffffff; /* 背景色を白に設定 */
@@ -22,12 +22,9 @@
             height: auto;
         }
         .background {
-            position: absolute; /* 背景画像を固定 */
-            top: 100;
-            left: 0;
+            position: relative; /* 相対配置 */
             width: 100%;
             height: 400px; /* 背景画像の高さ */
-            z-index: -1; /* 奥に配置 */
         }
         .background img {
             width: 100%;
@@ -35,8 +32,11 @@
             object-fit: cover; /* 縦横比を保ちながら全体を表示 */
         }
         nav {
-            position: relative;
-            height: 300px; /* ナビゲーションエリアの高さ */
+            position: absolute; /* 絶対配置 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px; /* 背景画像と同じ高さ */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,7 +49,6 @@
             background-color: transparent; /* 背景を透明に設定 */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         .links a {
             display: block;
@@ -58,7 +57,7 @@
             text-decoration: none;
             color: #000000; /* 文字色を黒に設定 */
             font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.5); /* 各リンクの背景を白に設定 */
+            background-color: rgba(255, 255, 255, 0.5); /* 各リンクの背景を半透明の白に設定 */
             border: 2px solid #000000; /* 枠線を追加 */
             border-radius: 5px;
             font-weight: bold;
@@ -68,11 +67,11 @@
             background-color: #f0f0f0; /* ホバー時の背景色 */
         }
         footer {
-            background-color: #000000; /* 黒背景 */
+            background-color: #333333; /* 黒背景 */
             color: #ffffff; /* 文字色を白に */
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+            padding: 5px 0; /* フッターの幅を狭く設定 */
+            margin-top: -10px; /* 背景画像とのギャップを詰める */
             border-top: 2px solid #000000; /* 上に黒い線を引く */
         }
         footer a {
